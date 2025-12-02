@@ -47,5 +47,3 @@ retryBtn.addEventListener('click', () => {
   resultImg.style.display = "none"; 
 })
 
-
-

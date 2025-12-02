@@ -27,8 +27,8 @@ function isAlpha(str) {
     const isLower = code >= 97 && code <= 122;
 
     if(!isLower) return false;
-    return true;
   }
+  return true;
 }
 
 export default function isAnagram(word1, word2) {
@@ -37,7 +37,7 @@ export default function isAnagram(word1, word2) {
   const normalize = (string) => string.toLowerCase();
   const str1 = normalize(word1);
   const str2 = normalize(word2);
-  
+
   // jika bukan huruf return false
   if (!isAlpha(str1) || !isAlpha(str2)) return false;
 
