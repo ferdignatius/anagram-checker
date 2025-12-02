@@ -21,25 +21,25 @@ function sortWord(word) {
   return sorted;
 }
 
-function isAlpha(string) {
-  for (let i = 0; i < string.length; i++) {
-    const a = string[i];
-    const isLower = a >= 'a' && a <= 'z';
-    const isUpper = a >= 'A' && a <= 'Z';
+function isAlpha(str) {
+  for (let i = 0; i < str.length; i++) {
+    const code = str.charCodeAt(i);
+    const isLower = code >= 97 && code <= 122;
 
-    if(!isLower || !isUpper) return false;
+    if(!isLower) return false;
     return true;
   }
 }
 
 export default function isAnagram(word1, word2) {
-  // jika bukan huruf return false
-  if (!isAlpha(word1) || !isAlpha(word2)) return false
-
+  
   // jadikan jadi lowercase & hanya terima a-z aja
-  const normalize = (string) => string.toLowerCase().replace(/[^a-z]/g, "");
+  const normalize = (string) => string.toLowerCase();
   const str1 = normalize(word1);
   const str2 = normalize(word2);
+  
+  // jika bukan huruf return false
+  if (!isAlpha(str1) || !isAlpha(str2)) return false;
 
   // jika panjang keduanya berbeda, udah pasti bukan anagram
   if (str1.length !== str2.length) return false;
