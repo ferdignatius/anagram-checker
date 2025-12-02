@@ -1,39 +1,8 @@
-// sorting
-function sortWord(word) {
-  // inisiasi dan masukkan word ke array wordSorted
-  const arr = [];
-  for (let i = 0; i < word.length; i++) arr.push(word[i])
-  
-  for (let i = 0; i < word.length - 1; i++) {
-    for (let j = 0; j < word.length - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        // swap
-        const temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-
-  let sorted = '';
-  for (let i = 0; i < arr.length; i++) sorted += arr[i];
-  
-  return sorted;
-}
-
-function isAlpha(str) {
-  for (let i = 0; i < str.length; i++) {
-    const code = str.charCodeAt(i);
-    const isLower = code >= 97 && code <= 122;
-
-    if(!isLower) return false;
-  }
-  return true;
-}
+import isAlpha from "./isAlpha.js";
+import sortWord from "./sortWord.js";
 
 export default function isAnagram(word1, word2) {
-  
-  // jadikan jadi lowercase & hanya terima a-z aja
+  // jadikan jadi lowercase
   const normalize = (string) => string.toLowerCase();
   const str1 = normalize(word1);
   const str2 = normalize(word2);
@@ -42,7 +11,7 @@ export default function isAnagram(word1, word2) {
   if (!isAlpha(str1) || !isAlpha(str2)) return { ok: false, error: "Input hanya boleh huruf a-z" };
 
   // jika panjang keduanya berbeda, udah pasti bukan anagram
-  if (str1.length !== str2.length) return false;
+  if (str1.length !== str2.length) return { ok: false, error: "Panjang kata berbeda, sudah pasti bukan Anagram" };
 
   // sorting tiap huruf supaya bisa dicocokkan antar index
   const strSorted1 = sortWord(str1);
