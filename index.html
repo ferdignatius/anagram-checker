@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anagram Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Anagram Checker</h1>
+    <form id="form">
+      <label for="input">
+        <input id="word1" type="text" placeholder="Word 1" required>
+        <input id="word2" type="text" placeholder="Word 2" required>
+      </label>
+      <button type="submit">Check</button>
+    </form>
+  </div>
+  <div class="card card-result">
+    <img id="result-img">
+    <p id="result">Hasilnya akan muncul disini</p>
+    <p id="description-result"></p>
+    <button id="retryBtn" style="display: none;" type="button">Coba Lagi</button>
+  </div>
+  
+  <script type="module" src="script.js"></script>
+</body>
+</html>
