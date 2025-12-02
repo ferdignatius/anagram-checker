@@ -116,3 +116,63 @@ body {
   color: white;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+
+  body{
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .card {
+    width: 80%;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  #form label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+  }
+
+  #form input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  #form button {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  #retryBtn {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  #result-img {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  #result {
+    width: 100%;
+    font-size: 20px;
+    margin-top: -6px;
+  }
+
+  .card-result {
+    width: 80%;
+    gap: 8px;
+  }
+
+  #description-result {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -12px;
+  }
+}
