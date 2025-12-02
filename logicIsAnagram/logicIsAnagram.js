@@ -39,7 +39,7 @@ export default function isAnagram(word1, word2) {
   const str2 = normalize(word2);
 
   // jika bukan huruf return false
-  if (!isAlpha(str1) || !isAlpha(str2)) return false;
+  if (!isAlpha(str1) || !isAlpha(str2)) return { ok: false, error: "Input hanya boleh huruf a-z" };
 
   // jika panjang keduanya berbeda, udah pasti bukan anagram
   if (str1.length !== str2.length) return false;
@@ -49,9 +49,5 @@ export default function isAnagram(word1, word2) {
   const strSorted2 = sortWord(str2);
 
   // cek kecocokan tiap huruf antara str1 & str2
-  if (strSorted1 === strSorted2) {
-    return true;
-  } else {
-    return false;
-  }
+  return { ok: true, result: strSorted1 === strSorted2 };
 }
